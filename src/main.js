@@ -1,10 +1,10 @@
-import { createApp, defineAsyncComponent } from 'vue'
+import { createApp } from 'vue'
 import App from '@/App.vue'
 // import router from './router'
 import store from '@/store'
 import service from '@/service'
-// import utils from '@/utils'
 import components from '@/components'
+// import utils from '@/utils'
 
 const app = createApp(App)
 app.use(store).use(service).use(components)
