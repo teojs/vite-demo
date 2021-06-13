@@ -10,12 +10,14 @@
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
     "vue": "^3.0.5",
+    "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/cli-plugin-vuex": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.5",
+    "less": "^4.1.1",
     "vite": "^2.3.7"
   }
 }
