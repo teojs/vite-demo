@@ -57,5 +57,6 @@ module.exports = {
         multiline: 'never',
       },
     ],
+    // 'space-before-function-paren': 0,
   },
 }
