@@ -8,7 +8,7 @@ axios.defaults.timeout = 60000
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 axios.defaults.headers.put['Content-Type'] = 'application/json;charset=UTF-8'
 axios.defaults.withCredentials = true
-// axios.defaults.baseURL = process.env.BASE_URL
+axios.defaults.baseURL = import.meta.env.BASE_URL
 axios.defaults.validateStatus = function(code) {
   return code >= 200 && status < 300
 }
