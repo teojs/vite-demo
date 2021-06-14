@@ -9,7 +9,7 @@ export default function(ctx) {
     // params: ctx.params,
     data: ctx.data,
     // loading: ctx.loading,
-  }).then(e => {
+  }).then((e) => {
     if (e.code === '01') {
       return ctx.success(e.body)
     }

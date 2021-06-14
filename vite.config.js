@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import eslint from '@rollup/plugin-eslint'
 const path = require('path')
 
 const servers = {
@@ -11,7 +12,7 @@ const proxyTarget = process.env.npm_config_api || 'test'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue()],
+  plugins: [vue(), eslint()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
