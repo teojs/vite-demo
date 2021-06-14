@@ -19,21 +19,21 @@ axios.interceptors.request.use(
     }
 
     // 自动打开 loading
-    if (config.loading) {
-      switch (typeof config.loading) {
-        case 'string':
-          config.loading = ElLoading.service({ text: config.loading })
-          break
-        case 'object':
-          config.loading = ElLoading.service({ target: config.loading })
-          break
-        case 'undefined':
-          break
-        default:
-          config.loading = ElLoading.service()
-          break
-      }
-    }
+    // if (config.loading) {
+    //   switch (typeof config.loading) {
+    //     case 'string':
+    //       config.loading = ElLoading.service({ text: config.loading })
+    //       break
+    //     case 'object':
+    //       config.loading = ElLoading.service({ target: config.loading })
+    //       break
+    //     case 'undefined':
+    //       break
+    //     default:
+    //       config.loading = ElLoading.service()
+    //       break
+    //   }
+    // }
     // store.state.pendingApi += axios.apiName
     return config
   },
@@ -61,7 +61,7 @@ axios.interceptors.response.use(
         }
       } else {
         // token 过期的情况
-        const errorCode = ['04']
+        // const errorCode = ['04']
         // const currentPath = Router.currentRoute.path
         // if (
         //   errorCode.includes(response.data.code) &&

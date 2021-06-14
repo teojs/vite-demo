@@ -1,6 +1,6 @@
 import axios from './axios.config'
 import _ from 'lodash'
-const request = function (api, apiName) {
+const request = function(api, apiName) {
   return (ctx) => {
     axios.apiName = apiName
     ctx = {
@@ -20,6 +20,8 @@ for (const key in allApis) {
   const path = key.match(/\.\/apis\/(.+?)\.js/)[1].replace(/\//g, '.')
   _.set(apis, path, request.bind(apis)(allApis[key].default, path))
 }
+// 自动注册/src/service/apis的所以接口
+
 apis.$http = axios
 apis.$api = apis
 

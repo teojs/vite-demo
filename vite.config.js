@@ -1,6 +1,6 @@
-const path = require('path')
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+const path = require('path')
 
 const servers = {
   test: 'http://127.0.0.1:8081', // 测试环境
