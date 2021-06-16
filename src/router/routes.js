@@ -9,39 +9,34 @@ for (const path in pages) {
   const key = path
     .replace('/src/pages/', '')
     .replace('.vue', '')
-    .replace('/', '.')
+    .replace(/\//g, '.')
   _.set(pagesObj, key, {
     component: defineAsyncComponent(mod),
   })
 }
-// ↑自动注册路由↑
 
 console.log(pagesObj)
 
 const routes = []
-const formatRoute = (routes, obj) => {
+const formatRoute = (routes, obj, parentKey) => {
+  const route = {
+    name: parentKey,
+    component: obj.component,
+    path: `/${parentKey}`,
+    children: [],
+  }
+  routes.push(route)
   for (const key in obj) {
-    const component = obj[key].component
-    if (key === 'component') {
-      routes.push({
-        name: component.name,
-        path: key,
-      })
-    } else {
-      formatRoute(routes, obj[key])
+    if (key !== 'component') {
+      formatRoute(route.children, obj[key], `${parentKey}/${key}`)
     }
   }
 }
-formatRoute(routes, pagesObj)
+for (const key in pagesObj) {
+  formatRoute(routes, pagesObj[key], key)
+}
 
-export default [
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-]
+console.log(routes)
+// ↑自动注册路由↑
+
+export default routes
