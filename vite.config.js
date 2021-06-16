@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import eslint from '@rollup/plugin-eslint'
+// import eslint from '@rollup/plugin-eslint'
 const path = require('path')
 
 const servers = {
@@ -14,9 +14,9 @@ export default defineConfig({
   base: '/',
   plugins: [
     vue(),
-    eslint({
-      fix: true,
-    }),
+    // eslint({
+    //   fix: true,
+    // }),
   ],
   resolve: {
     alias: {
