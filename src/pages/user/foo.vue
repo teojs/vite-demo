@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <router-view></router-view>
-  </div>
+  foo.vue>
+  <router-view></router-view>
 </template>
 
 <script>

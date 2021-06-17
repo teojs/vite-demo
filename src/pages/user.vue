@@ -1,5 +1,5 @@
 <template>
-  123
+  user.vue>
   <router-view></router-view>
 </template>
 

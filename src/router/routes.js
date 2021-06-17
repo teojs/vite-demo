@@ -1,4 +1,3 @@
-import { defineAsyncComponent } from 'vue'
 import _ from 'lodash'
 
 // ↓自动注册路由↓
@@ -27,14 +26,17 @@ const formatRoute = (routes, obj, parentKey) => {
   routes.push(route)
   for (const key in obj) {
     if (key !== 'component') {
-      formatRoute(route.children, obj[key], `${parentKey}/${key}`)
+      formatRoute(
+        route.children,
+        obj[key],
+        `${parentKey}/${key.replace('_', ':')}`
+      )
     }
   }
 }
 for (const key in pagesObj) {
   formatRoute(routes, pagesObj[key], key)
 }
-
 // ↑自动注册路由↑
-
+console.log(routes)
 export default routes
