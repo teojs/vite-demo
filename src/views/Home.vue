@@ -1,6 +1,8 @@
 <template>
   <n-layout has-sider class="home">
-    <n-layout-sider>侧边栏</n-layout-sider>
+    <n-layout-sider>
+      <RouterList :routers="$router.options.routes" />
+    </n-layout-sider>
     <n-layout>
       <n-layout-header>头部</n-layout-header>
       <n-layout-content>
