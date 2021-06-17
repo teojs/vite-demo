@@ -11,11 +11,9 @@ for (const path in pages) {
     .replace('.vue', '')
     .replace(/\//g, '.')
   _.set(pagesObj, key, {
-    component: defineAsyncComponent(mod),
+    component: mod.default,
   })
 }
-
-console.log(pagesObj)
 
 const routes = []
 const formatRoute = (routes, obj, parentKey) => {
@@ -24,6 +22,7 @@ const formatRoute = (routes, obj, parentKey) => {
     component: obj.component,
     path: `/${parentKey}`,
     children: [],
+    ...obj.component.routeInfo,
   }
   routes.push(route)
   for (const key in obj) {
@@ -36,7 +35,6 @@ for (const key in pagesObj) {
   formatRoute(routes, pagesObj[key], key)
 }
 
-console.log(routes)
 // ↑自动注册路由↑
 
 export default routes
