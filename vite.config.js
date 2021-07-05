@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-// import eslint from '@rollup/plugin-eslint'
+import eslint from '@rollup/plugin-eslint'
 const path = require('path')
 
 const servers = {
@@ -12,12 +11,7 @@ const proxyTarget = process.env.npm_config_api || 'test'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [
-    vue(),
-    // eslint({
-    //   fix: true,
-    // }),
-  ],
+  plugins: [eslint()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
@@ -29,9 +23,7 @@ export default defineConfig({
       '/api': {
         target: servers[proxyTarget],
         changeOrigin: true,
-        pathRewrite: {
-          '/api': servers[proxyTarget],
-        },
+        pathRewrite: { '^/api': '' },
       },
     },
   },

@@ -3,9 +3,12 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['plugin:vue/vue3-essential', '@vue/standard'],
+  extends: ['plugin:vue/vue3-recommended'],
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: 'babel-eslint',
     ecmaVersion: 2020,
+    sourceType: 'module',
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
