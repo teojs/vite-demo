@@ -1,9 +1,0 @@
-<template>
-  user.vue>
-</template>
-
-<script>
-export default {
-  name: 'Home',
-}
-</script>
