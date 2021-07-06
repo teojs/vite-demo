@@ -1,6 +1,6 @@
 <template>
   user.vue>
-  <router-view></router-view>
+  <router-view />
 </template>
 
 <script>

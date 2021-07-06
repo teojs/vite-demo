@@ -1,5 +1,5 @@
 <template>
-  _id.vue{{$route.params}}
+  _id.vue{{ $route.params }}
 </template>
 
 <script>

@@ -1,9 +1,14 @@
 <template>
-  <div v-for="router in routers" :key="router.path" class="list">
+  <div
+    v-for="router in routers"
+    :key="router.path"
+    class="list">
     <router-link :to="router.path">
-      {{router.name}}
+      {{ router.name }}
     </router-link>
-    <RouterList v-if="router.children" :routers="router.children" />
+    <RouterList
+      v-if="router.children"
+      :routers="router.children" />
   </div>
 </template>
 
@@ -36,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped lang='less'>
+<style scoped lang="less">
 .list {
   margin-left: 10px;
   a {

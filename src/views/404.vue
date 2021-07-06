@@ -1,8 +1,10 @@
 <template>
   <div class="not-found">
-    <i class="iconfont icon-404"></i>
+    <i class="iconfont icon-404" />
     <p>
-      <router-link to="/">回到首页</router-link>
+      <router-link to="/">
+        回到首页
+      </router-link>
     </p>
   </div>
 </template>
