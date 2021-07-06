@@ -38,5 +38,4 @@ for (const key in pagesObj) {
   formatRoute(routes, pagesObj[key], key)
 }
 // ↑自动注册路由↑
-console.log(routes)
 export default routes

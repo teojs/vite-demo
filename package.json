@@ -19,6 +19,7 @@
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/cli-plugin-vuex": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-standard": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.30.0",
     "eslint-import-resolver-alias": "^1.1.2",

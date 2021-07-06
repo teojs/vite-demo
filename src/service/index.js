@@ -26,7 +26,7 @@ apis.$http = axios
 apis.$api = apis
 
 export default {
-  install: (app, options) => {
+  install: (app) => {
     app.config.globalProperties.$api = apis
   },
 }
