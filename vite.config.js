@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslint from 'vite-plugin-eslint'
+import autocreate from './plugin/autocreate'
 const path = require('path')
 
 const servers = {
@@ -19,6 +20,7 @@ export default defineConfig({
       throwOnError: true,
       throwOnWarning: true,
     }),
+    autocreate(),
   ],
   resolve: {
     alias: {

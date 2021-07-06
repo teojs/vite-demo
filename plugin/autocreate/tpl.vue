@@ -2,19 +2,16 @@
   component name here
 </template>
 
-<route>
-{
-  "name": "component name here",
-  "meta": {
-    "title": "component name here"
-  },
-  "sort": 1
-}
-</route>
-
 <script>
 export default {
-  name: 'component name here',
+  routeInfo: {
+    meta: {
+      title: 'component name here',
+    },
+    icon: 'el-icon-menu',
+    hidden: true,
+    sort: 1,
+  },
   components: {},
   data() {
     return {}
