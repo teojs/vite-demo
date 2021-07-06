@@ -2,9 +2,8 @@
   "name": "vite-demo",
   "version": "0.0.0",
   "scripts": {
-    "serve": "vite",
+    "serve": "vite --host",
     "build": "vite build",
-    "lint": "vue-cli-service lint",
     "preview": "vite preview"
   },
   "dependencies": {
