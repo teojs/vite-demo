@@ -15,7 +15,9 @@ export default defineConfig({
   plugins: [
     vue(),
     eslint({
-      // fix: true,
+      fix: true,
+      throwOnError: true,
+      throwOnWarning: true,
     }),
   ],
   resolve: {
