@@ -7,6 +7,7 @@ import components from '@/components'
 import utils from '@/utils'
 import naive from 'naive-ui'
 import '@/styles/index.less'
+import 'normalize.css'
 
 // 通用字体
 import 'vfonts/Lato.css'
