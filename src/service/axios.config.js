@@ -1,7 +1,6 @@
 import axios from 'axios'
 // import { ElLoading, ElNotification } from 'element-plus'
 // import Router from '@/router'
-import store from '@/store'
 import _ from 'lodash'
 
 axios.defaults.timeout = 60000
@@ -34,7 +33,6 @@ axios.interceptors.request.use(
     //       break
     //   }
     // }
-    // store.state.pendingApi += axios.apiName
     return config
   },
   error => {
@@ -43,7 +41,6 @@ axios.interceptors.request.use(
 )
 axios.interceptors.response.use(
   response => {
-    store.state.pendingApi = store.state.pendingApi.replace(axios.apiName, '')
     response.config.loading && response.config.loading.close()
 
     if (_.inRange(response.status, 200, 299)) {
@@ -90,7 +87,6 @@ axios.interceptors.response.use(
   },
   error => {
     if ('config' in error) {
-      store.state.pendingApi = store.state.pendingApi.replace(axios.apiName, '')
       error.config.loading.close()
       // ElNotification.error({
       //   title: '请求出错',

@@ -39,7 +39,7 @@ export default defineConfig({
       '/api': {
         target: servers[proxyTarget],
         changeOrigin: true,
-        pathRewrite: { '^/api': '' },
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

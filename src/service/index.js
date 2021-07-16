@@ -1,8 +1,7 @@
 import axios from './axios.config'
 import _ from 'lodash'
-const request = function(api, apiName) {
-  return (ctx) => {
-    axios.apiName = apiName
+const request = function(api) {
+  return ctx => {
     ctx = {
       success() {},
       fail() {},
@@ -26,7 +25,7 @@ apis.$http = axios
 apis.$api = apis
 
 export default {
-  install: (app) => {
+  install: app => {
     app.config.globalProperties.$api = apis
   },
 }
