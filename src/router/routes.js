@@ -24,8 +24,8 @@ const formatRoute = (routes, page, parentKey) => {
       component: page.index.component,
       path: `/${parentKey}`,
       children: [],
+      ...page.index.component?.routeInfo,
     }
-    route = { ...route, ...page.index.component?.routeInfo }
     routes.push(route)
     for (const key in page) {
       if (!['component', 'index'].includes(key)) {
