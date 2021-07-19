@@ -11,31 +11,51 @@ for (const path in pages) {
     .replace(/\//g, '.')
   _.set(pagesObj, key, {
     component: mod.default,
+    filePath: path,
   })
 }
 
 const routes = []
-const formatRoute = (routes, obj, parentKey) => {
-  const route = {
-    name: parentKey,
-    component: obj.component,
-    path: `/${parentKey}`,
-    children: [],
-    ...obj.component.routeInfo,
-  }
-  routes.push(route)
-  for (const key in obj) {
-    if (key !== 'component') {
-      formatRoute(
-        route.children,
-        obj[key],
-        `${parentKey}/${key.replace('_', ':')}`
-      )
+const formatRoute = (routes, page, parentKey) => {
+  let route
+  if (page.index) {
+    route = {
+      name: parentKey,
+      component: page.index.component,
+      path: `/${parentKey}`,
+      children: [],
     }
+    route = { ...route, ...page.index.component?.routeInfo }
+    routes.push(route)
+    for (const key in page) {
+      if (!['component', 'index'].includes(key)) {
+        formatRoute(
+          route.children,
+          page[key],
+          `${parentKey}/${key.replace('_', ':')}`
+        )
+      }
+    }
+    return
   }
+  if (!page.component) {
+    for (const key in page) {
+      formatRoute(routes, page[key], `${parentKey}/${key.replace('_', ':')}`)
+    }
+    return
+  }
+  route = {
+    name: parentKey,
+    component: page.component,
+    path: `/${parentKey}`,
+    ...page.component?.routeInfo,
+  }
+
+  routes.push(route)
 }
 for (const key in pagesObj) {
   formatRoute(routes, pagesObj[key], key)
 }
 // ↑自动注册路由↑
+
 export default routes

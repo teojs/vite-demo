@@ -17,28 +17,28 @@ export default options => {
   }
   options.el.style.pointerEvents = 'none'
   options.el.style.borderColor = 'transparent'
-  const dom = document.createElement('div')
-  dom.style.position = 'absolute'
-  dom.style.width = '100%'
-  dom.style.height = '100%'
-  dom.style.top = 0
-  dom.style.left = 0
-  dom.style.backdropFilter = 'blur(5px)'
-  dom.style.background = options.background
-  dom.style.zIndex = 9999
+  const loading = document.createElement('div')
+  loading.style.position = 'absolute'
+  loading.style.width = '100%'
+  loading.style.height = '100%'
+  loading.style.top = 0
+  loading.style.left = 0
+  loading.style.backdropFilter = 'blur(5px)'
+  loading.style.background = options.background
+  loading.style.zIndex = 9999
 
   new Spinner({
     color: options.foreground,
     lines: options.lines,
     scale: options.scale,
-  }).spin(dom)
-  options.el.appendChild(dom)
+  }).spin(loading)
+  options.el.appendChild(loading)
 
   return {
     close() {
-      options.style.pointerEvents = pointerEvents
-      options.style.position = position
-      options.removeChild(dom)
+      options.style.pointerEvents = pointerEvents || ''
+      options.style.position = position || ''
+      options.removeChild(loading)
     },
   }
 }

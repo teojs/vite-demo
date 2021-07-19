@@ -1,4 +1,5 @@
 import axios from 'axios'
+import loading from '@/utils/loading'
 // import { ElLoading, ElNotification } from 'element-plus'
 // import Router from '@/router'
 import _ from 'lodash'
@@ -18,21 +19,21 @@ axios.interceptors.request.use(
     }
 
     // 自动打开 loading
-    // if (config.loading) {
-    //   switch (typeof config.loading) {
-    //     case 'string':
-    //       config.loading = ElLoading.service({ text: config.loading })
-    //       break
-    //     case 'object':
-    //       config.loading = ElLoading.service({ target: config.loading })
-    //       break
-    //     case 'undefined':
-    //       break
-    //     default:
-    //       config.loading = ElLoading.service()
-    //       break
-    //   }
-    // }
+    if (config.loading) {
+      switch (typeof config.loading) {
+        // case 'string':
+        //   config.loading = loading({ text: config.loading })
+        //   break
+        case 'object':
+          config.loading = loading({ el: config.loading })
+          break
+        case 'undefined':
+          break
+        default:
+          config.loading = loading()
+          break
+      }
+    }
     return config
   },
   error => {
