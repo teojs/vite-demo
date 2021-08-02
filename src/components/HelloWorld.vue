@@ -1,6 +1,7 @@
 <template>
   <div class="helloworld">
     <h1>{{ msg }}</h1>
+    <p>{{ msg }}</p>
   </div>
 </template>
 
@@ -23,5 +24,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    width: 750px;
+    font-size: 24px;
+    text-align: center;
+  }
 }
 </style>

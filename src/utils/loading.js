@@ -1,3 +1,7 @@
+/*
+  一个loading插件，用于接口请求时自动显示loading
+*/
+
 import { Spinner } from 'spin.js'
 import 'spin.js/spin.css'
 

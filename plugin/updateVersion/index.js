@@ -8,4 +8,4 @@ const newVersion = packageContent.version.split('.')
 newVersion[2]++
 packageContent.version = newVersion.join('.')
 
-fs.writeFileSync(packagePath, JSON.stringify(packageContent, null, 2))
+fs.writeFileSync(packagePath, JSON.stringify(packageContent, null, 2) + '\n')

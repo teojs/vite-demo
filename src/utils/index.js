@@ -1,5 +1,7 @@
+// 这里只放一些全局变量
+
 export default {
   install: (app, options) => {
-    console.log(app)
+    app.config.globalProperties.$test = 'test'
   },
 }

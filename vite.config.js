@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslint from 'vite-plugin-eslint'
 import autocreate from './plugin/autocreate'
-import autoprefixer from 'autoprefixer'
 const path = require('path')
 
 const servers = {
@@ -26,11 +25,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
-    },
-  },
-  css: {
-    postcss: {
-      plugins: [autoprefixer],
     },
   },
   server: {

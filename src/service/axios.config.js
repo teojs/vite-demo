@@ -1,6 +1,5 @@
 import axios from 'axios'
 import loading from '@/utils/loading'
-// import { ElLoading, ElNotification } from 'element-plus'
 // import Router from '@/router'
 import _ from 'lodash'
 
@@ -76,10 +75,7 @@ axios.interceptors.response.use(
       }
     }
 
-    // ElNotification.error({
-    //   title: `${response.statusText}(${response.status})`,
-    //   message: response.config.url,
-    // })
+    // 这里可以弹出错误提示
     return {
       code: response.status,
       message: response.statusText,
@@ -89,10 +85,7 @@ axios.interceptors.response.use(
   error => {
     if ('config' in error) {
       error.config.loading.close()
-      // ElNotification.error({
-      //   title: '请求出错',
-      //   message: `${error.message}`,
-      // })
+      // 这里可以弹出错误提示
     }
     return {
       code: null,
