@@ -1,16 +1,11 @@
 <template>
-  <n-config-provider :theme="darkTheme">
-    <router-view />
-  </n-config-provider>
+  <router-view />
 </template>
 
 <script>
-import { darkTheme } from 'naive-ui'
 export default {
   data() {
-    return {
-      darkTheme,
-    }
+    return {}
   },
 }
 </script>
