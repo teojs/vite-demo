@@ -2,7 +2,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslint from 'vite-plugin-eslint'
 import autocreate from './plugin/autocreate'
+import { visualizer } from 'rollup-plugin-visualizer'
 const path = require('path')
+
+const cdnTransform = () => {
+  return {
+    name: 'transform-file',
+    load(id) {
+      console.log(id)
+    },
+  }
+}
 
 const servers = {
   test: 'http://127.0.0.1:8081', // 测试环境
@@ -21,6 +31,7 @@ export default defineConfig({
       throwOnWarning: true,
     }),
     autocreate(),
+    cdnTransform(),
   ],
   resolve: {
     alias: {
@@ -33,7 +44,7 @@ export default defineConfig({
       '/api': {
         target: servers[proxyTarget],
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: path => path.replace(/^\/api/, ''),
       },
     },
   },
