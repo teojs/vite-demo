@@ -48,4 +48,10 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      // 生成代码分析
+      plugins: [visualizer()],
+    },
+  },
 })
