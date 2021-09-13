@@ -5,15 +5,6 @@ import autocreate from './plugin/autocreate'
 import { visualizer } from 'rollup-plugin-visualizer'
 const path = require('path')
 
-const cdnTransform = () => {
-  return {
-    name: 'transform-file',
-    load(id) {
-      console.log(id)
-    },
-  }
-}
-
 const servers = {
   test: 'http://127.0.0.1:8081', // 测试环境
   prod: 'http://127.0.0.1:8081', // 正式环境
@@ -31,7 +22,6 @@ export default defineConfig({
       throwOnWarning: true,
     }),
     autocreate(),
-    cdnTransform(),
   ],
   resolve: {
     alias: {
