@@ -40,9 +40,9 @@ export default options => {
 
   return {
     close() {
-      options.style.pointerEvents = pointerEvents || ''
-      options.style.position = position || ''
-      options.removeChild(loading)
+      options.el.style.pointerEvents = pointerEvents || ''
+      options.el.style.position = position || ''
+      options.el.removeChild(loading)
     },
   }
 }
