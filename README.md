@@ -18,4 +18,4 @@ See [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-ro
 
 ### commit massge 提交规范
 
-See [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
+See [conventional-changelog](https://github.com/conventional-changelog/commitlint/#what-is-commitlint)
