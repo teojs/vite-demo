@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo "提交日志不规范或者lint不通过，点击查看详情"
+npm run lint

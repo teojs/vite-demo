@@ -15,3 +15,7 @@ See [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-ro
 如果是 PC 端，请删掉 main.js 中的 import 'amfe-flexible' 和 postcss.config.js 中的 postcss-pxtorem
 
 参照这个：https://vant-contrib.gitee.io/vant/v3/#/zh-CN/advanced-usage#rem-bu-ju-gua-pei
+
+### commit massge 提交规范
+
+See [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
