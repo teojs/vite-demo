@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslint from 'vite-plugin-eslint'
 import autocreate from './plugin/autocreate'
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 const path = require('path')
 
 const servers = {
@@ -25,7 +25,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   server: {
@@ -38,10 +38,10 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    rollupOptions: {
-      // 生成代码分析
-      plugins: [visualizer()],
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     // 生成代码分析
+  //     // plugins: [visualizer()],
+  //   },
+  // },
 })
