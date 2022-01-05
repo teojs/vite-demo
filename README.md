@@ -16,6 +16,6 @@ See [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-ro
 
 参照这个：https://vant-contrib.gitee.io/vant/v3/#/zh-CN/advanced-usage#rem-bu-ju-gua-pei
 
-### commit massge 提交规范
+### commit massage 提交规范
 
 See [conventional-changelog](https://github.com/conventional-changelog/commitlint/#what-is-commitlint)
